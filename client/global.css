@@ -1,0 +1,125 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 158 47% 98%;
+    --foreground: 173 55% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 173 55% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 173 55% 16%;
+
+    --primary: 151 75% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 164 57% 92%;
+    --secondary-foreground: 164 45% 22%;
+
+    --muted: 169 36% 90%;
+    --muted-foreground: 170 28% 36%;
+
+    --accent: 199 90% 88%;
+    --accent-foreground: 200 60% 18%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 162 37% 86%;
+    --input: 162 37% 86%;
+    --ring: 151 75% 40%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 173 55% 16%;
+    --sidebar-primary: 151 75% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 164 57% 92%;
+    --sidebar-accent-foreground: 164 45% 22%;
+    --sidebar-border: 162 37% 86%;
+    --sidebar-ring: 151 75% 40%;
+  }
+
+  .dark {
+    --background: 174 36% 6%;
+    --foreground: 157 45% 92%;
+
+    --card: 180 28% 12%;
+    --card-foreground: 157 45% 92%;
+
+    --popover: 180 28% 12%;
+    --popover-foreground: 157 45% 92%;
+
+    --primary: 151 75% 52%;
+    --primary-foreground: 153 100% 6%;
+
+    --secondary: 182 25% 18%;
+    --secondary-foreground: 157 45% 92%;
+
+    --muted: 180 23% 22%;
+    --muted-foreground: 162 18% 70%;
+
+    --accent: 198 52% 28%;
+    --accent-foreground: 157 45% 92%;
+
+    --destructive: 0 82% 62%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 24% 22%;
+    --input: 180 24% 22%;
+    --ring: 151 75% 52%;
+
+    --sidebar-background: 180 28% 8%;
+    --sidebar-foreground: 157 45% 92%;
+    --sidebar-primary: 151 75% 45%;
+    --sidebar-primary-foreground: 153 100% 6%;
+    --sidebar-accent: 180 28% 16%;
+    --sidebar-accent-foreground: 157 45% 92%;
+    --sidebar-border: 180 24% 22%;
+    --sidebar-ring: 151 75% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.18);
+    color: hsl(var(--primary-foreground));
+  }
+}
+
+@layer components {
+  .shadow-soft {
+    @apply shadow-[0_25px_60px_-30px_rgba(16,38,29,0.35)];
+  }
+}
+
+@layer utilities {
+  .bg-mesh {
+    background-image:
+      radial-gradient(35rem circle at 20% 20%, hsl(var(--primary) / 0.18), transparent 65%),
+      radial-gradient(30rem circle at 80% 10%, hsl(var(--accent) / 0.15), transparent 70%),
+      radial-gradient(32rem circle at 50% 85%, hsl(var(--secondary) / 0.2), transparent 65%);
+  }
+}
